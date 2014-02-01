@@ -8,3 +8,6 @@
 *.pem
 
 .sass-cache/
+dist/
+lib/
+node_modules/
