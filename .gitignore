@@ -7,6 +7,8 @@
 
 *.pem
 
+*.zip
+
 .sass-cache/
 dist/
 lib/
