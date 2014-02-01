@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 11.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="577" height="446" viewBox="49.517 131.042 577 446" xml:space="preserve">
+	<defs>
+	</defs>
+	<g>
+		<path display="none" fill="#2795B6" d="M618.914,556.801c0,10.604-8.596,19.201-19.199,19.201H62.114
+			c-10.604,0-19.2-8.598-19.2-19.201V19.2c0-10.604,8.597-19.2,19.2-19.2h537.601c10.604,0,19.199,8.596,19.199,19.2V556.801z"/>
+		
+			<polygon display="none" fill="#06687F" stroke="#FFFFFF" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" points="
+			568.447,170.567 626,236.4 533.723,236.4 "/>
+		
+			<polyline display="none" fill="#06687F" stroke="#FFFFFF" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" points="
+			364.389,131.4 50,131.4 364.389,340.025 "/>
+		
+			<polygon display="none" fill="#2795B6" stroke="#FFFFFF" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" points="
+			432.461,220.567 568.447,170.567 425.904,469.4 "/>
+		
+			<polygon display="none" fill="#06687F" stroke="#FFFFFF" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" points="
+			364.402,354.533 364.389,131.4 503.369,306.15 425.904,469.4 "/>
+		
+			<polygon display="none" fill="#2795B6" stroke="#FFFFFF" stroke-width="100" stroke-linecap="round" stroke-linejoin="round" points="
+			444.037,456.4 221.926,131.4 364.389,131.4 364.389,576.734 "/>
+		<polygon fill="#06687F" points="568.448,170.567 625.999,236.399 533.724,236.399 "/>
+		<polyline fill="#06687F" points="364.388,131.4 50,131.4 364.388,340.025 "/>
+		<polygon fill="#2795B6" points="432.462,220.567 568.448,170.567 425.905,469.4 "/>
+		<polygon fill="#06687F" points="364.401,354.533 364.388,131.4 503.368,306.149 425.905,469.4 "/>
+		<polygon fill="#2795B6" points="444.036,456.4 221.926,131.4 364.388,131.4 364.388,576.734 "/>
+		<polygon display="none" fill="#06687F" points="591.02,150.868 648.569,236.016 556.295,236.016 "/>
+		<polyline display="none" fill="#06687F" points="386.958,100.209 72.57,100.209 386.958,370.047 "/>
+		<polygon display="none" fill="#2795B6" points="455.032,215.539 591.02,150.868 448.476,537.382 "/>
+		<polygon display="none" fill="#06687F" points="386.972,388.812 386.958,100.209 525.938,326.231 448.476,537.382 "/>
+		<polygon display="none" fill="#2795B6" points="466.606,520.567 244.497,100.209 386.958,100.209 386.958,676.209 "/>
+	</g>
+</svg>

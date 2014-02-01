@@ -1,0 +1,10 @@
+
+*.DS_Store
+
+._*
+
+*.crx
+
+*.pem
+
+.sass-cache/

@@ -1,0 +1,22 @@
+{
+	"name": "XML-RPC Client",
+	"description": "XML-RPC Client",
+	"version": "1.0.1",
+	"manifest_version": 2,
+	"browser_action" : {
+		"default_icon": "img/ico32d.png"
+	},
+	"background": {
+		"scripts": ["js/event.js"],
+		"persistent": false
+	},
+	"icons": {
+		"128": "img/ico128.png",
+		"32": "img/ico32.png",
+		"16": "img/ico16.png"
+	},
+	"permissions": [
+		"storage",
+		"\u003Call_urls\u003E"
+	]
+}

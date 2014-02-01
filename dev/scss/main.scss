@@ -1,0 +1,80 @@
+@charset "UTF-8";
+@import
+	"../../lib/foundation/scss/normalize.scss",
+	"../../lib/foundation/scss/foundation.scss",
+	"font-awesome.css",
+	"pace";
+/*!
+ * This is free and unencumbered software released into the public domain.
+ * For more information, please refer to <http://unlicense.org/>
+ * License: http://unlicense.org/UNLICENSE
+ */
+html {
+height:100%;
+overflow: auto;
+}
+*:focus,*:active {
+outline: none !important;
+}
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+background-color: transparent;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+height: 0px;
+display: block;
+background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+background-color: transparent;
+border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 50px;
+background-color: $primary-color;
+border-radius: 0px;
+border:2px solid #fff;
+}
+::-webkit-scrollbar-thumb:horizontal {
+visibility: hidden;
+}
+.panel::-webkit-scrollbar-thumb:vertical{
+border-color: #f2f2f2;
+}
+/*
+.panel {
+border: none;
+}
+*/
+#logo {
+margin-top:0;
+margin-right: -7px;
+height:30px;
+}
+#howto {
+//margin-top: 15px;
+}
+#output {
+overflow: auto;
+margin-bottom: 15px;
+}
+select {
+height: 2.3125rem;
+}
+.jso-filter { 
+border-bottom: 1px solid rgba(0,0,0,0.5) !important;
+background-color: rgba(255,255,255,0.5) !important;
+outline: none;
+}
+pre {
+white-space: pre-wrap;
+font-size:0.8em;
+}
+form {
+	margin-top: rem-calc(20);
+}
+#tbc {
+	background: $topbar-bg;
+}

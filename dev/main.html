@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+  ~ This is free and unencumbered software released into the public domain.
+  ~ For more information, please refer to <http://unlicense.org/>
+  ~ License: http://unlicense.org/UNLICENSE
+  -->
+<html ng-app>
+<head>
+	<meta charset="utf-8">
+	<title>XML&ndash;RPC Client</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" />
+	<script src="js/angular/angular.js"></script>
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-controller="AppCtrl">
+	<nav class="top-bar row collapse" data-topbar="">
+		<ul class="title-area"><li class="name"><h1><a><img src="img/logo.svg" alt="" id="logo" /> XML-RPC Client</a></h1></li></ul>
+		<section class="top-bar-section">
+			<ul class="right">
+				<li class="divider"></li>
+				<li><a href="https://twitter.com/giatro"><i class="fa fa-twitter"></i></a></li>
+				<li class="divider"></li>
+				<li class="has-form">
+					<button class="small button" type="button" ng-click="joyride()">How it works?</button>
+				</li>
+			</ul>
+		</section>
+	</nav>
+	<form>
+		<div class="row collapse">
+			<div class="small-11 columns">
+				<label>XML–RPC Server</label>
+				<input id="server" type="text" placeholder="XML–RPC Server" value="" ng-model="server.url" ng-change="serverChanged()">
+			</div>
+			<div class="small-1 columns">
+				<label>&nbsp;</label>
+				<button id="historyopen" data-dropdown="historydrop" type="button" class="button postfix"><i class="fa fa-clock-o"></i></button>
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="small-6 medium-6 large-8 columns">
+				<label>Methods</label>
+				<select id="method" ng-model="method" ng-options="method for method in methods" ng-disabled="methods === undefined || methods.length === 0">
+				</select>
+			</div>
+			<div class="small-2 medium-2 large-2 columns">
+				<label>&nbsp;</label>
+				<button id="loadmethods" type="button" class="button postfix" ng-click="loadMethods()" ng-disabled="server === undefined || server.url === undefined || server.url === ''">Get methods</button>
+			</div>
+			<div class="small-2 medium-2 large-1 columns">
+				<label>&nbsp;</label>
+				<button id="methodhelp" type="button" class="button secondary postfix" ng-click="methodHelp()" ng-disabled="method === undefined">Help</button>
+			</div>
+			<div class="small-2 medium-2 large-1 columns">
+				<label>&nbsp;</label>
+				<button id="methodsignature" type="button" class="button secondary postfix" ng-click="methodSignature()" ng-disabled="method === undefined">Signature</button>
+			</div>
+		</div>
+		<div class="row collapse">
+			<label>Array of params <span data-tooltip class="tip-right" title="use valid JSON data"><i class="fa fa-question-circle"></i></span></label>
+			<input id="params" type="text" placeholder="array of params" ng-model="params" ng-disabled="method === undefined">
+		</div>
+		<div class="row collapse">
+			<button id="send" type="button" class="button expand" ng-click="execRequest()" ng-disabled="method === undefined">Send <i class="fa fa-arrow-circle-o-right"></i></button>
+		</div>
+	</form>
+	<div class="row">
+			<div data-alert class="alert-box {{status.status}}" ng-hide="status === undefined">{{status.msg}}</div>
+			<div id="output" class="panel" ng-hide="responsexml === undefined || responsexml == ''">
+				<h5 ng-hide="status.status!=='success'">Response object</h5>
+				<div ng-hide="status.status!=='success'" id="outputobj"></div>
+				<h5>Response XML</h5>
+				<pre>{{responsexml}}</pre>
+			</div>
+	</div>
+	<ul id="historydrop" class="f-dropdown large" data-dropdown-content ng-model="method">
+		<li ng-repeat="server in servers"><a href="#" data-url="{{server.url}}" ng-click="setServer(server)"><i class="fa fa-times" style="float:right" ng-click="removeServer(server)"></i><i class="fa fa-arrow-circle-o-right"></i> {{server.url}}</a></li>
+	</ul>
+	<ol class="joyride-list" data-joyride>
+		<li data-id="server" data-text="Next" data-options="tip_location: bottom">
+		<h4>XML–RPC Server</h4>
+		<p>Where to enter the XML–RPC Server url where to send requests.</p>
+		</li>
+		<li data-id="historyopen" data-text="Next" data-options="tip_location: bottom">
+		<h4>History</h4>
+		<p>Urls of XML–RPC Server that return valid responses are listed here.</p>
+		</li>
+		<li data-id="loadmethods" data-button="Next" data-options="tip_location:top">
+		<h4>List methods</h4>
+		<p>List all available XML–RPC methods.</p>
+		</li>
+		<li data-id="methodhelp" data-button="Next" data-options="tip_location:top">
+		<h4>Method help</h4>
+		<p>Display help message for the selected XML–RPC method.</p>
+		</li>
+		<li data-id="methodsignature" data-button="Next" data-options="tip_location:top">
+		<h4>Method signature</h4>
+		<p>Return the selected XML–RPC method signature.</p>
+		</li>
+		<li data-id="params" data-button="Next" data-options="tip_location:top">
+		<h4>Request params</h4>
+		<p>Where to enter the XML–RPC request params.</p>
+		</li>
+		<li data-id="send" data-button="End" data-options="tip_location:top">
+		<h4>Send</h4>
+		<p>Starts XML–RPC request to entered XML–RPC server, with entered params and selected method.</p>
+		</li>
+	</ol>
+	<script src="js/app.js"></script>
+</body>

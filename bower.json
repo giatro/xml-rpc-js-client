@@ -1,0 +1,77 @@
+{
+  "name": "xml-rpc-js-client",
+  "version": "0.0.0",
+  "description": "Chrome application to explore and test XML-RPC servers",
+  "keywords": [
+    "xml-rpc",
+    "chrome"
+  ],
+  "authors": [
+    "gianluca troiani [gianluca.troiani@gmail.com",
+    "@giatro]"
+  ],
+  "license": "public domain",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.0.2",
+    "font-awesome": "~4.0.3",
+    "jquery-xmlrpc": "~0.4.3",
+    "js-object-renderer": "https://github.com/huafu/js-object-renderer.git",
+    "pace": "~0.4.16",
+    "xml-pretty-print": "https://github.com/aishwar/xml-pretty-print.git",
+    "angular": "~1.2.10"
+  },
+  "resolutions": {
+    "jquery": ">= 2.0.0"
+  },
+  "exportsOverride": {
+    "foundation": {
+      "js": [
+        "js/foundation.js"
+      ],
+      "scss": [
+        "scss/*.scss"
+      ],
+      "scss/foundation": [
+        "scss/foundation/*.scss"
+      ],
+      "scss/foundation/components": [
+        "scss/foundation/components/*.scss"
+      ]
+    },
+    "font-awesome": {
+      "css": "css/*.css",
+      "fonts": "fonts/*"
+    },
+    "js-object-renderer": {
+      ".": [
+        "src/css/*.css",
+        "src/js/*.js"
+      ],
+      "lib": "src/js/lib/*.js"
+    },
+    "modernizr": {
+      ".": "modernizr.js"
+    },
+    "jquery-xmlrpc": {
+      ".": "jquery.xmlrpc.js"
+    },
+    "jquery-mockjax": {},
+    "xml-pretty-print": {
+      ".": "xml-prettify.js"
+    },
+    "pace": {
+      ".": [
+        "LICENSE",
+        "pace.js"
+      ]
+    }
+  }
+}

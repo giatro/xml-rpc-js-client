@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+  ~ This is free and unencumbered software released into the public domain.
+  ~ For more information, please refer to <http://unlicense.org/>
+  ~ License: http://unlicense.org/UNLICENSE
+  -->
+<html>
+<head>
+</head>
+<body>
+<script>
+window.addEventListener('message', function(event) {
+	if(event.data.command === undefined) {
+		throw 'InvalidCommandException';
+	}
+	switch(event.data.command) {
+		case 'eval':
+			try {
+				event.source.postMessage({'result': eval(event.data.str)}, event.origin);
+			} catch(err) {
+				event.source.postMessage({'result': {'iserror':true,'msg':err.message}}, event.origin);
+			}
+			break;
+		default:
+			event.source.postMessage({'result': {'iserror':true,'msg':'Invalid command'}}, event.origin);
+			break;
+	} 
+});
+</script>
+</body>
+</html>
