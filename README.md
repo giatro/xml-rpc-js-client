@@ -6,8 +6,7 @@ Chrome extension to test XML-RPC servers
 
 	$ npm install
 	$ grunt init
-	$ grunt dist
-
+	
 `dist` folder will contain the extension's source code
 
 ## UNLICENSE ##
