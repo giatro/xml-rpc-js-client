@@ -9,9 +9,8 @@
  * For more information, please refer to <http://unlicense.org/>
  * License: http://unlicense.org/UNLICENSE
  */
-html {
+html,body {
 height:100%;
-overflow: auto;
 }
 *:focus,*:active {
 outline: none !important;
@@ -77,4 +76,21 @@ form {
 }
 #tbc {
 	background: $topbar-bg;
+}
+#loader{
+position: absolute;
+z-index:999999;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0,0,0,0.5);
+color: #FFF;
+text-align: center;
+	div {
+		top: rem-calc(170);
+		position: absolute;
+		width: 100%;
+		font-size: 64px
+	}
 }

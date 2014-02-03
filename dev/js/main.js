@@ -4,6 +4,10 @@
  * License: http://unlicense.org/UNLICENSE
  */
 ;function AppCtrl($scope) {
+	$scope.loading = true;
+	$scope.init = function() {
+		$scope.loading = false;
+	}
 	$scope.joyride = function(){
 		jQuery(document).foundation('joyride', 'start');
 	}
@@ -62,31 +66,35 @@
 	}
 	$scope._execRequest = function(url,method,params,successcb,errorcb) {
 		$scope.status = {'status':'info','msg':'Sending request ...'};
-		console.log("params: %s",params);
-		console.log("params || []: %s",params || []);
+		$scope.loading = true;
+		$scope.responsexml = undefined;
 		jQuery.xmlrpc({
-			'async': false,
 			'url': url,
 			'methodName': method,
 			'params': params,
 			success: function(response, status, jqXHR) {
-				document.getElementById('outputobj').innerHTML = '';
-				Object.inspectInto(response[0], 'outputobj', 'Response object');
-				$scope.responsexml = prettify(jqXHR.responseText).replace(/\t/g,'  ');
-				$scope.status = {'status':'success','msg':'Request status ' + jqXHR.status};
-				console.log({"response":response,"status":status,"jqXHR":jqXHR,"xml":prettify(jqXHR.responseText).replace(/\t/g,'  ')});
-				if(successcb !== undefined){
-					successcb(response, status, jqXHR);				
-				}
+				$scope.$apply(function(){
+					document.getElementById('outputobj').innerHTML = '';
+					Object.inspectInto(response[0], 'outputobj', 'Response object');
+					if(successcb !== undefined){
+						successcb(response, status, jqXHR);				
+					}
+					$scope.responsexml = prettify(jqXHR.responseText).replace(/\t/g,'  ');
+					$scope.status = {'status':'success','msg':'Request status ' + jqXHR.status};
+					$scope.loading = false;
+				});
 			},
 			error: function(jqXHR, status, error) {
-				document.getElementById('outputobj').innerHTML = '';
-				$scope.responsexml = prettify(jqXHR.responseText).replace(/\t/g,'  ');
-				$scope.status = {'status':'warning','msg':error.message};
-				console.error({"error":error,"status":status,"jqXHR":jqXHR,"xml":prettify(jqXHR.responseText).replace(/\t/g,'  ')});
-				if(errorcb !== undefined) {
-					errorcb(jqXHR, status, error);
-				}
+				$scope.$apply(function(){
+					document.getElementById('outputobj').innerHTML = '';
+					document.getElementById('outputobj').innerHTML = '';
+					if(errorcb !== undefined) {
+						errorcb(jqXHR, status, error);
+					}
+					$scope.responsexml = prettify(jqXHR.responseText).replace(/\t/g,'  ');
+					$scope.status = {'status':'warning','msg':error.message};
+					$scope.loading = false;
+				});
 			}
 		});
 	}

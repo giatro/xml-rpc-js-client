@@ -12,7 +12,7 @@
 	<script src="js/angular/angular.js"></script>
 	<link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-controller="AppCtrl">
+<body ng-controller="AppCtrl" ng-init="init()">
 	<nav class="top-bar row collapse" data-topbar="">
 		<ul class="title-area"><li class="name"><h1><a><img src="img/logo.svg" alt="" id="logo" /> XML-RPC Client</a></h1></li></ul>
 		<section class="top-bar-section">
@@ -104,5 +104,6 @@
 		<p>Starts XML–RPC request to entered XML–RPC server, with entered params and selected method.</p>
 		</li>
 	</ol>
+	<div ng-hide="loading===false" id="loader"><div><i class="fa fa-spinner fa-spin"></i></div></div>
 	<script src="js/app.js"></script>
 </body>
