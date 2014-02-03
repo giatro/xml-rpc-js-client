@@ -9,6 +9,8 @@
 
 *.zip
 
+*.*.swp
+
 .sass-cache/
 dist/
 lib/
