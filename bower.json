@@ -24,7 +24,6 @@
     "font-awesome": "~4.0.3",
     "jquery-xmlrpc": "~0.4.3",
     "js-object-renderer": "https://github.com/huafu/js-object-renderer.git",
-    "pace": "~0.4.16",
     "xml-pretty-print": "https://github.com/aishwar/xml-pretty-print.git",
     "angular": "~1.2.10"
   },
@@ -66,12 +65,6 @@
     "jquery-mockjax": {},
     "xml-pretty-print": {
       ".": "xml-prettify.js"
-    },
-    "pace": {
-      ".": [
-        "LICENSE",
-        "pace.js"
-      ]
     }
   }
 }

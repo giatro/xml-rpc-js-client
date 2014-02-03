@@ -23,11 +23,11 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			css: {
-				src: [ "dev/css/pace.css", "lib/font-awesome/css/font-awesome.css", "lib/js-object-renderer/ObjectRenderer.css", "dist/css/app.css" ],
+				src: [ "lib/font-awesome/css/font-awesome.css", "lib/js-object-renderer/ObjectRenderer.css", "dist/css/app.css" ],
 				dest: 'dist/css/app.css'
 			},
 			js: {
-				src : [ "dev/js/init.js", "lib/pace/pace.js", "lib/js-object-renderer/lib/prototype.js", "lib/js-object-renderer/ObjectRenderer.js", "lib/modernizr/modernizr.js", "lib/jquery/jquery.js", "dev/js/jqnc.js", "lib/jquery-xmlrpc/jquery.xmlrpc.js", "lib/foundation/js/foundation.js", "lib/xml-pretty-print/xml-prettify.js", "dev/js/main.js" ],
+				src : [ "lib/js-object-renderer/lib/prototype.js", "lib/js-object-renderer/ObjectRenderer.js", "lib/modernizr/modernizr.js", "lib/jquery/jquery.js", "dev/js/jqnc.js", "lib/jquery-xmlrpc/jquery.xmlrpc.js", "lib/foundation/js/foundation.js", "lib/xml-pretty-print/xml-prettify.js", "dev/js/main.js" ],
 				dest : 'dist/js/app.js'
 			}
 		},
