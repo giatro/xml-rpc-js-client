@@ -4,7 +4,6 @@
  * License: http://unlicense.org/UNLICENSE
  */
 ;function AppCtrl($scope) {
-_sc = $scope;
 	$scope.joyride = function(){
 		jQuery(document).foundation('joyride', 'start');
 	}
