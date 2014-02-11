@@ -11,6 +11,12 @@
 	$scope.joyride = function(){
 		jQuery(document).foundation('joyride', 'start');
 	}
+	$scope.copyMethod = function() {
+		document.getElementById('clip').focus();
+		document.execCommand('selectAll',false,null);
+		document.execCommand('copy', false, null);
+//		document.getElementById('clip').blur();
+	}
 	$scope.loadServers = function () {
 		var servers = JSON.parse(localStorage.getItem('servers')) || {};
 		$scope.server = undefined;

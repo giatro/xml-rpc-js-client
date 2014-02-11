@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-controller="AppCtrl" ng-init="init()">
+	<input type="text" id="clip" ng-model="method" style="position:absolute;top:-10000em;">
 	<nav class="top-bar row collapse" data-topbar="">
 		<ul class="title-area"><li class="name"><h1><a><img src="img/logo.svg" alt="" id="logo" /> XML-RPC Client</a></h1></li></ul>
 		<section class="top-bar-section">
@@ -36,7 +37,7 @@
 			</div>
 		</div>
 		<div class="row collapse">
-			<div class="small-6 medium-6 large-8 columns">
+			<div class="small-7 medium-7 large-7 columns">
 				<label>Methods</label>
 				<select id="method" ng-model="method" ng-options="method for method in methods" ng-disabled="methods === undefined || methods.length === 0">
 				</select>
@@ -45,13 +46,17 @@
 				<label>&nbsp;</label>
 				<button id="loadmethods" type="button" class="button postfix" ng-click="loadMethods()" ng-disabled="server === undefined || server.url === undefined || server.url === ''">Get methods</button>
 			</div>
-			<div class="small-2 medium-2 large-1 columns">
+			<div class="small-1 medium-1 large-1 columns">
 				<label>&nbsp;</label>
-				<button id="methodhelp" type="button" class="button secondary postfix" ng-click="methodHelp()" ng-disabled="method === undefined">Help</button>
+				<button id="copymethod" data-tooltip title="copiy selected method to clipboard" type="button" class="tip-top button secondary postfix" ng-click="copyMethod()" ng-disabled="method === undefined || method === ''"><i class="fa fa-copy"></i></button>
 			</div>
-			<div class="small-2 medium-2 large-1 columns">
+			<div class="small-1 medium-1 large-1 columns">
 				<label>&nbsp;</label>
-				<button id="methodsignature" type="button" class="button secondary postfix" ng-click="methodSignature()" ng-disabled="method === undefined">Signature</button>
+				<button id="methodhelp" data-tooltip title="get selected method's help message" type="button" class="button secondary postfix" ng-click="methodHelp()" ng-disabled="method === undefined"><i class="fa fa-question"></i></button>
+			</div>
+			<div class="small-1 medium-1 large-1 columns">
+				<label>&nbsp;</label>
+				<button id="methodsignature" data-tooltip title="get selected method's signature" type="button" class="button secondary postfix" ng-click="methodSignature()" ng-disabled="method === undefined"><i class="fa fa-info"></i></button>
 			</div>
 		</div>
 		<div class="row collapse">
@@ -86,6 +91,10 @@
 		<li data-id="loadmethods" data-button="Next" data-options="tip_location:top">
 		<h4>List methods</h4>
 		<p>List all available XML–RPC methods.</p>
+		</li>
+		<li data-id="copymethod" data-button="Next" data-options="tip_location:top">
+		<h4>Method copy</h4>
+		<p>Copy selected method to clipboard.</p>
 		</li>
 		<li data-id="methodhelp" data-button="Next" data-options="tip_location:top">
 		<h4>Method help</h4>
